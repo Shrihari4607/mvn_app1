@@ -11,7 +11,7 @@ pipeline {
               // checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Shrihari4607/mvn_app1.git']]])
            // }
         //}
-        // webhook test
+        // webhook test run
         stage('Build') {
             steps {
                 bat """mvn -B -DskipTests clean package"""
