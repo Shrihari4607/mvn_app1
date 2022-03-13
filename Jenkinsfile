@@ -32,6 +32,11 @@ pipeline {
                 echo "uploading ${app_name}-1.0.${BUILD_Number}.zip to Nexus"
             }
         }
+        stage('Deploy') {
+            steps {
+                echo "Deploying ${app_name}-1.0.${BUILD_Number}.zip to non-prod environments"
+            }
+        }
     }
     post {
         always{
