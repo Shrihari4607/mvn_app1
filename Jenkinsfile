@@ -41,7 +41,9 @@ pipeline {
         }
     }
     post {
-        sendNotifications ('shrihari.m@chubb.com')
+        always{
+        sendNotifications ('shrihari4607@gmail.com')
+        }
         /*always{
             emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
             subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
