@@ -39,7 +39,7 @@ pipeline {
                       //to: 'shrihari4607@gmail.com')
             
             //env.ForEmailPlugin = env.WORKSPACE      
-            emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
+            emailext body: '''${SCRIPT, template="email_html.template"}''', 
             subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
             to: 'shrihari4607@gmail.com'
         }
