@@ -42,7 +42,7 @@ pipeline {
     }
     post {
         always{
-        sendNotifications ('shrihari4607@gmail.com')
+        sendNotifications currentBuild.result
         }
         /*always{
             emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
