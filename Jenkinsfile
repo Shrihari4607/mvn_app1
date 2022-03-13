@@ -41,10 +41,10 @@ pipeline {
         }
     }
     post {
-        always{
+        /*always{
             emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
             subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
             to: 'shrihari4607@gmail.com'
-        }
+        }*/
     }
 }
