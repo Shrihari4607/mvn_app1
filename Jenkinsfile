@@ -27,5 +27,10 @@ pipeline {
                 }
             }
         }
+        stage('Artifact-Upload') {
+            steps {
+                echo "uploading ${app_name}-1.0.${BUILD_Number}.zip to Nexus"
+            }
+        }
     }
 }
