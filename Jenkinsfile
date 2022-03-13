@@ -33,4 +33,9 @@ pipeline {
             }
         }
     }
+    post {
+        always{
+            emailext body: 'Test email', subject: 'Jenkins', to: 'shrihari4607@gmail.com'
+        }
+    }
 }
