@@ -35,8 +35,13 @@ pipeline {
     }
     post {
         always{
-            emailext ( body: 'test', subject: '', 
-                      to: 'shrihari4607@gmail.com')
+           // emailext ( body: 'test', subject: '', 
+                      //to: 'shrihari4607@gmail.com')
+            
+            //env.ForEmailPlugin = env.WORKSPACE      
+            emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
+            subject: currentBuild.currentResult + " : " + env.JOB_NAME, 
+            to: 'shrihari4607@gmail.com'
         }
     }
 }
