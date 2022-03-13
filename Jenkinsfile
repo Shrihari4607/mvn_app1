@@ -40,8 +40,12 @@ pipeline {
     }
     post {
         always{
-           // emailext ( body: 'test', subject: '', 
-                      //to: 'shrihari4607@gmail.com')
+            success {
+      slackSend (color: '#00FF00', message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+
+      hipchatSend (color: 'GREEN', notify: true,
+          message: "SUCCESSFUL: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})"
+        )
             
             //env.ForEmailPlugin = env.WORKSPACE      
             emailext body: '''${SCRIPT, template="groovy_html.template"}''', 
